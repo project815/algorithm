@@ -2,6 +2,7 @@
 
 int main(void)
 {
+	//p87. 거스름돈
 	using namespace std;
 	ios::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);

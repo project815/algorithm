@@ -45,6 +45,7 @@
 
 int main(void)
 {
+    //p.92. 큰 수의 법칙
     using namespace std;
     ios::sync_with_stdio(false);
     cin.tie(NULL), cout.tie(NULL);
