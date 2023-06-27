@@ -1,6 +1,7 @@
 {
-    "files.associations": {
-        "utility": "cpp",
-        "iostream": "cpp"
-    }
+  "files.associations": {
+    "utility": "cpp",
+    "iostream": "cpp"
+  },
+  "liveServer.settings.port": 5501
 }

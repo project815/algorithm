@@ -1,0 +1,1531 @@
+<style>
+  @font-face {
+    font-family: "GongGothicBold";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicBold.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Hahmlet-Bold";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/Hahmlet-Bold.woff2")
+      format("woff2");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  section.promotion {
+    width: 100%;
+    max-width: 1300px;
+    height: auto;
+    margin: 0 auto;
+  }
+  section.promotion img {
+    width: 100%;
+    max-width: 1300px;
+    height: auto;
+  }
+  section.program {
+    max-width: 100%;
+    width: 1300px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+  }
+  section.program:not(:first-of-type) {
+    margin-bottom: 40px;
+  }
+  section.program .program-img-container {
+    width: 100%;
+  }
+  .promotion-footer-img-container {
+    width: 100%;
+  }
+  .promotion-footer-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-top: 1px;
+    display: block;
+  }
+  section.program .program-img-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .item {
+    overflow: hidden;
+  }
+  .header-info {
+    background: #ffa552;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 13px;
+    border-bottom: 2px solid #272727;
+  }
+  .header-info .model-name {
+    background: white;
+    border: 2px solid #272727;
+    border-radius: 10px;
+    height: 24px;
+    padding: 3px 9px;
+    font-family: "S-Core Dream";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14px;
+    width: calc(100% - 32px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  section.program .item-container {
+    background: white;
+    padding-bottom: 20px;
+  }
+  section.program .item-container h3 {
+    font-size: 24px;
+    line-height: 32px;
+    font-family: "S-Core-M";
+    padding-top: 40px;
+    text-align: center;
+  }
+  section.program .item-container h2 {
+    font-size: 40px;
+    line-height: 56px;
+    font-family: "S-Core-B";
+    text-align: center;
+  }
+  section.program .item-container .item-list {
+    margin: 40px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  section.program .item-container .item-list .item {
+    width: 300px;
+    border: 2px solid #272727;
+    border-radius: 8px;
+    margin: 15px;
+  }
+  section.program .item-container .item-list .item .item-info {
+    padding: 16px 24px;
+    height: 138px;
+    box-shadow: 0px 5px 0px 0px #0000001a;
+    border-top: 2px solid #272727;
+    border-bottom: 2px solid #272727;
+    border-radius: 0 0 8px 8px;
+  }
+  section.program .item-container .item-list .item .item-info .purchase-type {
+    width: 42px;
+    height: 20px;
+    flex-grow: 0;
+    padding: 2px 9px;
+    border-radius: 4px;
+    line-height: 24px;
+    font-family: "S-Core-M";
+    font-size: 12px;
+    color: white;
+  }
+  section.program .item-container .item-list .item .item-info .brand {
+    font-family: S-Core Dream;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 16px;
+    text-align: left;
+    color: #00c09f;
+    margin-bottom: 4px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  section.program .item-container .item-list .item .item-info .model-name {
+    font-family: "GongGothicMedium";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #272727;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  section.program .item-container .item-list .item .item-info .discount {
+    font-family: "S-Core Dream";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 20px;
+    color: #ff7a00;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  section.program .item-container .item-list .item .item-info .total-price {
+    font-family: "Noto Sans KR";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 20px;
+    color: #494949;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-top: 6px !important;
+    padding: 0 !important;
+    border: none;
+    display: inline-block;
+  }
+  section.program .item-container .item-list .item .item-info .price-box > div {
+    margin-top: 4px;
+  }
+  section.program .item-container .item-list .item .item-info .current-price {
+    display: flex;
+    align-items: baseline;
+    height: 16px;
+  }
+  section.program .item-container .item-list .item .item-info .original-price {
+    font-family: "S-Core Dream";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    text-decoration-line: line-through;
+    color: #828282;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    height: 8px;
+  }
+  section.program .item-container .item-list .item .item-info .grade {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+  }
+  section.program
+    .item-container
+    .item-list
+    .item
+    .item-info
+    .grade
+    .txtCenterVertical {
+    display: flex;
+    align-items: baseline;
+  }
+  section.program
+    .item-container
+    .item-list
+    .item
+    .item-info
+    .grade
+    .txtCenterVertical
+    img {
+    width: 18px;
+    height: 18px;
+  }
+
+  section.program .item-container .item-list .item .img-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  section.program .item-container .item-list .item .img-container img {
+    width: 260px;
+    height: 260px;
+    object-fit: contain;
+  }
+  section.program .item-container .item-list .item .img-container .img-hover {
+    display: block;
+    content: " ";
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    background: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    transition: 0.3s all;
+  }
+  section.program .item-container .item-list .item:hover .go-to-detail {
+    background-color: #e5ffcc;
+  }
+  section.program
+    .item-container
+    .item-list
+    .item:hover
+    .img-container
+    .img-hover {
+    background: rgba(0, 0, 0, 0.3);
+    background: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+    opacity: 1;
+  }
+  section.program .item-container .item-list .item .img-container {
+    position: relative;
+  }
+  section.program .item-container .item-list .model_name {
+    text-align: center;
+    font-family: "S-Core-B";
+    font-size: 18px;
+  }
+
+  section.program .item-container .item-list .model_name .brand {
+    font-size: 12px;
+    line-height: 8px;
+    font-family: "S-Core-M";
+    display: inline-block;
+    height: 18px;
+    color: orangered;
+    background-color: orange;
+    border-radius: 5px;
+    border: 2px solid orangered;
+    padding: 4px 6px;
+    margin-right: 6px;
+  }
+  section.program .item-container .item-list .go-to-detail {
+    font-family: "S-Core Dream";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 50px;
+    text-align: center;
+    /* or 150% */
+
+    /* Gray Color/Gray-900 */
+
+    color: #272727;
+    height: 48px;
+    background-color: #fff2cc;
+    border-radius: 0px 0px 8px 8px;
+    transition: all 0.3s;
+  }
+  section.contact {
+    width: 100%;
+    padding-top: 80px;
+  }
+  section.contact .form_tit {
+    font-size: 48px;
+    font-family: GongGothicBold;
+    margin-bottom: 40px;
+    color: #f6b91c;
+    padding: 0 16px 8px;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 50%,
+      rgba(255, 255, 255, 0.1) 50%
+    );
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .screen-header {
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+  .screen-header-left {
+    margin-right: auto;
+    height: 16px;
+  }
+  .screen-header-button {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 3px;
+    border-radius: 10px;
+    background: #ffffff;
+  }
+  .screen-header-button.close {
+    background: #ed1c6f;
+  }
+  .screen-header-button.maximize {
+    background: #e8e925;
+  }
+  .screen-header-button.minimize {
+    background: #74c54f;
+  }
+  .screen-header-right {
+    display: flex;
+  }
+  .screen-header-ellipsis {
+    width: 3px;
+    height: 3px;
+    margin-left: 2px;
+    border-radius: 8px;
+    background: #999999;
+  }
+
+  .step-main {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    border: 4px solid #000000 !important;
+    border-radius: 8px;
+    padding: 0 !important;
+    box-shadow: 5px 5px 20px rgb(0 0 0 / 20%);
+    overflow: hidden;
+  }
+  .step-main > .line_web1 {
+    border-bottom: 4px solid #555555;
+    margin-bottom: 48px;
+    height: 30px;
+    background-color: #666666;
+    border-radius: 4px 4px 0 0;
+  }
+  .step-main > .line_web2 {
+    border-top: 4px solid #666666;
+    margin-top: 48px;
+    height: 16px;
+    background-color: #f9f9f9;
+    border-radius: 0 0 4px 4px;
+  }
+  .step-main .step-wrap {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .step-wrap .form-box2 dl dt small {
+    display: inline-block !important;
+    margin-left: 3px;
+  }
+  .step-main .step-wrap .form-box2 .prerequisite {
+    text-align: right;
+    color: #272727;
+    padding-bottom: 16px;
+  }
+  .step-main .step-wrap .form-box2 .prerequisite > span {
+    color: #ff7a00;
+  }
+  .step-main .step-wrap .form-box2 dl {
+    position: relative;
+    margin-bottom: 24px;
+    padding-left: 0;
+  }
+  .step-main .step-wrap .form-box2 dl dt {
+    left: 0;
+    top: 0;
+    font-size: 20px;
+    color: #272727;
+    font-family: S-Core-B;
+    margin-bottom: 8px;
+    position: static;
+  }
+  .step-main .agree small,
+  .step-main .form-box2 dl dt small {
+    font-size: 12px;
+    color: #ff7a00;
+    padding-top: 0;
+    padding-left: 1px;
+    display: inline;
+    font-family: S-Core;
+  }
+  .step ul li p {
+    font-family: GongGothicMedium;
+  }
+  .step-main .step-wrap .form-box2 dl dd .inp-box {
+    position: relative;
+  }
+  .step-main .step-wrap .form-box2 dl dd .inp-box label {
+    outline: 0;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 48px;
+    line-height: 48px;
+    border: none;
+    background: #ffffff;
+    font-size: 22px;
+    box-sizing: border-box;
+  }
+  .step-main .step-wrap .form-box2 dl dd .inp-box .inp-p {
+    padding: 0;
+    width: 100%;
+    height: 48px;
+    border: 0;
+    font-size: 16px;
+    color: #272727;
+    border-radius: 0;
+    font-family: S-Core;
+    padding: 10px 16px;
+    border: 2px solid #999999;
+    border-radius: 8px;
+    background-color: #ffffff;
+  }
+  .step-main .step-wrap .form-box2 dl dd .inp-box .inp-p:focus-within {
+    border: 2px solid #272727;
+  }
+  .step-main .step-wrap .agree {
+    display: block;
+    justify-content: normal;
+    align-items: normal;
+    margin-top: 16px;
+    margin-bottom: 48px;
+  }
+  .step-main .step-wrap .agree .tit {
+    font-size: 14px;
+    font-family: S-Core;
+    color: #272727;
+    padding-left: 4px;
+    line-height: 22px;
+  }
+  .step-main .step-wrap .agree .chks .two {
+    display: flex;
+    justify-content: space-between;
+  }
+  .step-main .step-wrap .agree .chks .error_code {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .step-main .step-wrap .agree .chks label {
+    margin: 0;
+    display: flex;
+  }
+  .step-main .step-wrap .agree .checkbox + em {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #e9e9e9;
+    position: relative;
+    background: #ffffff;
+    transition: all 0.5s ease;
+    cursor: pointer;
+  }
+  .step-main .step-wrap .checkbox + em:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: url(/static/commons/img/event/ifskoreapromotion/check_g.svg)
+      no-repeat 50% 50%;
+    background-size: 10px auto;
+    opacity: 1;
+    transition: all 0.5s ease;
+    transform: scale(1);
+  }
+  .step-main .step-wrap .checkbox + em + span {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    margin-left: 6px;
+    cursor: pointer;
+  }
+  .step-main .step-wrap .checkbox:checked + em {
+    border-color: #95734c;
+    background-color: #95734c;
+  }
+  .step-main .step-wrap .checkbox:checked + em:before {
+    opacity: 1;
+    transform: scale(1);
+    background: url(/static/commons/img/event/ifskoreapromotion/check_w.svg)
+      no-repeat 50% 50%;
+  }
+  .join button {
+    vertical-align: middle;
+    width: 100%;
+    text-align: center;
+    max-width: 400px;
+    border-radius: 48px;
+    border: 4px solid #555555;
+    transition: all 0.25s;
+    text-decoration: none;
+    padding: 16px 48px;
+    font-size: 32px;
+    line-height: 40px;
+    font-family: S-Core-B;
+    color: #272727;
+    display: block;
+  }
+  .ask-container {
+    padding: 40px 0 80px 0;
+    text-align: center;
+  }
+  .ifskoreapromotion_inquiry {
+    color: #ffffff;
+    font-size: 16px;
+  }
+  .foot_addr:hover {
+    color: #fceede;
+  }
+  #footer div.inner {
+    max-width: 1200px;
+    padding: 0;
+    position: static;
+    margin: auto;
+    text-align: center;
+  }
+  #footer div.foot2 div.inner .cs-box .sns {
+    position: static;
+    padding-top: 0px !important;
+  }
+  #footer div.foot2 div.inner .cs-box .sns a {
+    margin: 0;
+  }
+
+  #footer div.foot2 div.inner .cs-box .cs {
+    position: static;
+  }
+
+  #footer .foot1 {
+    padding: 48px 0;
+    border-top: 1px solid #e8ebee;
+  }
+  #footer .foot1 .logo {
+    position: absolute;
+    left: 0;
+    top: -16px;
+  }
+  #footer .foot1 .logo img {
+    height: 48px;
+  }
+  #footer .foot1 .btns {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  #footer .foot1 .btns a {
+    font-size: 12px;
+    color: #909090;
+    font-weight: 500;
+    font-family: S-Core-M;
+    margin-right: 25px;
+    transition: all 0.3s ease;
+  }
+  #footer .foot1 .btns a:hover {
+    color: #000;
+  }
+  #footer .foot1 .btns:last-child {
+    padding-left: 25px;
+    position: relative;
+  }
+  #footer .foot1 .btns:last-child:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 2px;
+    height: 14px;
+    background: #dedede;
+  }
+  #footer .foot1 .btns:last-child a {
+    font-weight: 600;
+    font-family: S-Core-B;
+  }
+  #footer .foot2 {
+    margin-bottom: 0;
+    padding: 32px 15px 64px !important;
+  }
+  #footer .foot2 .cs {
+    position: relative;
+  }
+  #footer .foot2 .cs p {
+    font-size: 12px;
+    color: #909090;
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 25px;
+    background: url(../img/common/ico_foot_cs.svg) no-repeat right 50%;
+  }
+  #footer .foot2 .cs strong {
+    display: block;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: S-Core-B;
+    color: #ffffff;
+    margin: 2px 0 4px;
+  }
+  #footer .foot2 .cs span {
+    font-size: 12px !important;
+    color: #ffffff !important;
+    opacity: 0.8 !important;
+  }
+  #footer .foot2 .addr {
+    font-size: 12px;
+    line-height: 20px;
+    color: #ffffff;
+  }
+  #footer .foot2 .addr p {
+    display: block;
+    padding-top: 10px;
+    font-size: 11px;
+  }
+  #footer .foot2 .sns {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    padding-bottom: 20px;
+    margin: 0;
+    padding-top: 0;
+  }
+  #footer .foot2 .sns a {
+    margin: 0 4px;
+    display: inline-flex;
+    padding: 8px;
+    border-radius: 50%;
+    opacity: 0.2;
+    transition: all 0.5s ease;
+  }
+  #footer .foot2 .sns a:hover {
+    opacity: 1;
+  }
+  .participate {
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 40px;
+    max-width: 800px;
+    text-align: center;
+  }
+  .participate .enroll-img {
+    max-width: 100%;
+    height: auto;
+  }
+  .participate .title {
+    text-align: center;
+  }
+  .participate .title .img_tit.iconimg {
+    max-height: 120px;
+    text-align: center;
+  }
+  .participate .title .title-text {
+    font-size: 50px;
+    line-height: 64px;
+    font-family: "Hahmlet-Bold";
+    color: #95734c;
+  }
+  .participate .body {
+    text-align: center;
+  }
+  .participate .body .box_tit {
+    color: #ffffff;
+    border-radius: 20px;
+    background-color: #828282;
+    padding: 4px 24px;
+    display: inline-block;
+    margin-bottom: 16px;
+    font-family: S-core-B;
+    font-size: 21px;
+    line-height: 32px;
+  }
+  .participate .body .button-group {
+    padding-top: 40px;
+
+    /*
+      display: flex;
+      flex-direction: column;
+      */
+  }
+  .participate .body .button-group .box_text {
+    font-size: 20px;
+    line-height: 28px;
+    font-family: "S-Core-M";
+  }
+  .per_data {
+    max-width: 348px;
+    width: 100%;
+    margin: 0 auto 16px;
+    text-align: left;
+    line-height: 16px;
+    padding: 16px 20px;
+    font-size: 12px;
+    background-color: #f9f9f9;
+    color: #272727;
+  }
+  .per_data p > span {
+    padding-left: 10px;
+    font-size: 12px;
+    font-family: S-Core;
+    display: table;
+  }
+  .msg-upload {
+    text-align: center;
+    padding: 0 !important;
+  }
+
+  .per_data {
+    max-width: 348px;
+    width: 100%;
+    margin: 0 auto 16px;
+    text-align: left;
+    line-height: 16px;
+  }
+  .per_data p {
+    padding-bottom: 10px;
+  }
+
+  .call_popup > button {
+    transition: all 0.3s ease;
+    font-size: 14px;
+    color: #888;
+    text-decoration: underline;
+    font-family: S-Core;
+  }
+  .foot_addr {
+    color: #f6b91c;
+    cursor: pointer;
+    font-size: 22px;
+    line-height: 28px;
+    font-family: S-Core-B;
+    transition: all 0.25s;
+    text-decoration: underline !important;
+    padding: 2px;
+  }
+  .step-main > .line_web2 {
+    border-top: 4px solid #272727;
+    margin-top: 48px;
+    height: 16px;
+    background-color: #f9f9f9;
+    border-radius: 0 0 4px 4px;
+  }
+  @media all and (max-width: 768px) {
+    section.program .item-container h3 {
+      font-size: 18px;
+      line-height: 26px;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+
+    section.program .item-container h2 {
+      font-size: 32px;
+      line-height: 40px;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+
+    section.program:not(:first-of-type) {
+      margin-bottom: 0px;
+    }
+
+    .step-main .step-wrap {
+      padding: 0 20px;
+    }
+    #footer {
+      padding-bottom: 0 !important;
+    }
+    #footer .foot2 {
+      margin-bottom: 0;
+      padding: 32px 15px 64px !important;
+    }
+
+    .ifskoreapromotion_inquiry {
+      font-size: 14px;
+    }
+
+    .foot_addr {
+      font-size: 18px;
+    }
+
+    .step-main .step-wrap .agree .chks label {
+      display: flex;
+      align-items: center;
+    }
+
+    .step-main .step-wrap .agree .tit {
+      margin-bottom: 0 !important;
+      text-align: left;
+      font-size: 14px;
+      line-height: 22px;
+      display: flex;
+    }
+
+    section.program {
+      width: 95%;
+    }
+
+    section.contact .form_tit {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .step-main .step-wrap .agree .chks .two {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .step-main .step-wrap .agree .chks .two label {
+      width: 100%;
+    }
+    .foot_addr {
+      font-size: 20px;
+      line-height: 28px;
+    }
+    .step-main > .line_web1 {
+      margin-bottom: 24px;
+    }
+    .ask-container {
+      padding: 40px 0;
+    }
+    .mm {
+      display: block;
+    }
+    section.contact {
+      padding-top: 40px;
+    }
+  }
+
+  .quote-width {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .quote-contact {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    padding: 16px 20px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: 1px solid #e9e9e9;
+    box-sizing: border-box;
+    /* box-shadow: 5px 5px 20px rgba(0, 100, 220, 0.5); */
+    box-shadow: 5px 5px 20px rgb(89, 89, 89, 0.5);
+    position: fixed;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 99998;
+  }
+  .contact-btn {
+    /* width: 172px; */
+    /* height: 44px; */
+    display: inline-flex;
+    vertical-align: middle;
+    border-radius: 4px;
+    padding: 4px 16px 4px 8px;
+    background-color: #ffeb00;
+  }
+
+  .contact-btn-text {
+    /* width: 100px; */
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Noto Sans KR_B";
+    /* font-weight: 700; */
+    font-size: 16px;
+    color: #3c1e1e;
+    padding-left: 8px;
+  }
+
+  .contact-m-title {
+    font-family: "Noto Sans KR";
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .contact-m-sub-title {
+    font-family: "Noto Sans KR";
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    color: #0064dc;
+  }
+
+  @media screen and (max-width: 640px) {
+    .quote-contact {
+      border-radius: 0;
+      bottom: 0;
+      justify-content: center; /* display: inline-block; */
+    }
+
+    .contact-btn {
+      /* width: 172px; */
+      /* height: 44px; */
+      display: inline-flex;
+      vertical-align: middle;
+      border-radius: 4px;
+      padding: 4px 16px 4px 8px;
+      background-color: #ffeb00;
+    }
+
+    .contact-btn-text {
+      /* width: 100px; */
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Noto Sans KR_B";
+      /* font-weight: 700; */
+      font-size: 16px;
+      color: #3c1e1e;
+      padding-left: 8px;
+    }
+
+    .contact-m-title {
+      font-family: "Noto Sans KR";
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    .contact-m-sub-title {
+      font-family: "Noto Sans KR";
+      font-weight: 500;
+      font-size: 11px;
+      line-height: 15px;
+      color: #0064dc;
+    }
+  }
+
+  .contact-tel {
+    vertical-align: middle;
+    line-height: 48px;
+    color: #0064dc;
+    font-size: 24px;
+    font-family: "Noto Sans KR";
+    font-weight: 700;
+  }
+
+  @media all and (max-width: 640px) {
+    .pcpc {
+      display: none;
+    }
+  }
+
+  .term-modal .term-modal-body {
+    background: #ffffff;
+    border: 2px solid;
+    width: 110%;
+    max-width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    box-shadow: 5px 5px 0 #95734c, 5px 5px 0 2px #272727;
+  }
+  .msg-upload {
+    text-align: center;
+    padding: 0 !important;
+  }
+  .term-modal .form_term_modal_title {
+    font-size: 24px;
+    padding: 32px;
+    color: #272727;
+    font-family: GongGothicMedium;
+  }
+
+  .term-modal .form_term_modal_text1 {
+    font-size: 14px;
+    color: #272727;
+    margin: 0 32px 24px;
+    overflow-y: auto;
+    line-height: 18px;
+  }
+
+  .per_data {
+    max-width: 348px;
+    width: 100%;
+    margin: 0 auto 16px;
+    text-align: left;
+    line-height: 16px;
+  }
+  .per_data p {
+    padding-bottom: 10px;
+  }
+  .term-modal .form_term_modal_text2 {
+    font-size: 14px;
+    color: #272727;
+    max-width: 400px;
+    margin: 0 auto 24px;
+    overflow-y: auto;
+    line-height: 18px;
+  }
+  .term-modal .form_term_modal_btn {
+    padding: 0;
+    margin: 0 auto 32px;
+  }
+  .term-modal .form_term_modal_btn .btn-type {
+    width: auto;
+    line-height: 24px;
+    font-size: 16px;
+    padding: 12px 48px;
+    background: #dddddd;
+    cursor: pointer;
+    height: auto;
+    font-family: S-Core-B;
+    border-radius: 8px;
+    color: #666666;
+    border: 2px solid #555555;
+    margin: auto;
+  }
+
+  .floBanMob2 .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+    margin-right: 10px;
+  }
+
+  .floBanMob2:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .floBanMob2 {
+    z-index: 99;
+    display: flex !important;
+    position: fixed;
+    bottom: 80px; /* 아래 끝에서부터의 거리 */
+    right: 30px; /* 오른쪽 끝에서부터의 거리 */
+    align-items: center;
+    font-family: "S-Core Dream";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  .floBanMob2 .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+    margin-right: 10px;
+  }
+
+  .floBanMob2:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .floBanMob2 {
+    z-index: 99;
+    display: flex !important;
+    position: fixed;
+    bottom: 80px; /* 아래 끝에서부터의 거리 */
+    right: 30px; /* 오른쪽 끝에서부터의 거리 */
+    align-items: center;
+    font-family: "S-Core Dream";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+  }
+</style>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  dataLayer.push({
+    event: "Pageview",
+    pagePath: "https://www.googleanalytics.dev/pancakes",
+    pageTitle: "Pancake Event Signup",
+    visitorType: "customer",
+  });
+</script>
+
+<script>
+  (function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != "dataLayer" ? "&l=" + l : "";
+    j.async = true;
+    j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, "script", "dataLayer", "GTM-WG4C5C6");
+</script>
+
+<script>
+  let promotion_uid = localStorage.getItem("promotion_uid");
+
+  let name = document.getElementById("name");
+  let company = document.getElementById("company");
+  let phone = document.getElementById("phonenumber");
+  let email = document.getElementById("email");
+  let inquiries = document.getElementById("inquiries");
+  let isAgree = document.getElementById("is_agree");
+  let eventType = document.getElementById("event_type");
+
+  const validation = () => {
+    if (company.value == "") {
+      return alert("소속명을 입력해주세요");
+    } else if (name.value == "") {
+      return alert("이름을 입력해주세요");
+    } else if (phone.value == "") {
+      return alert("연락처를 입력해주세요");
+    } else if (email.value == "") {
+      return alert("이메일 주소를 입력해주세요");
+    } else if (inquiries.value == "") {
+      return alert("문의내용을 입력해주세요");
+    } else if (!isAgree.checked) {
+      return alert("개인정보 동의를 체크해주세요");
+    }
+
+    return true;
+  };
+
+  function onSubmit() {
+    const isValidation = validation();
+    if (isValidation) {
+      try {
+        fetch(
+          "https://asia-northeast3-marosol-service-77ce3.cloudfunctions.net/api/imweb/user",
+          {
+            method: "POST",
+            body: JSON.stringify({
+              name: name.value,
+              company: company.value,
+              phone: phone.value,
+              email: email.value,
+              inquiries: inquiries.value,
+              is_consent: isAgree.checked,
+              event_type: eventType.value,
+              promotion_uid: promotion_uid,
+            }),
+          }
+        );
+
+        alert("이벤트 신청이 완료되었습니다!");
+      } catch (error) {
+        console.log(error);
+        alert("시스템 오류가 발생하였습니다. 관리자에게 문의해주세요.");
+      }
+
+      $("#success-modal").addClass("flex");
+      $("#success-modal").removeClass("hidden");
+      $("#success-modal > button").click(function () {
+        $("#success-modal").addClass("hidden");
+        $("#success-modal").removeClass("flex");
+      });
+    }
+  }
+</script>
+
+<section class="contact">
+  <div class="floBanMob2 hidden-lg">
+    <span class="tooltiptext">마로솔 바로가기</span>
+    <a href="https://www.myrobotsolution.com/" target="_blank">
+      <div
+        style="
+          display: flex;
+          height: 60px;
+          width: 60px;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          background-color: white;
+          flex-direction: column;
+          box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0.2);
+        "
+      >
+        <img
+          src="https://marosol-bucket-dev.s3.ap-northeast-2.amazonaws.com/images/promotion/image_marosol_logo.png"
+          width="30px"
+          height="30px"
+        />
+      </div>
+    </a>
+  </div>
+
+  <div class="floBanMob2 hidden-lg">
+    <span class="tooltiptext">마로솔 바로가기</span>
+    <a href="https://www.myrobotsolution.com/" target="_blank">
+      <div
+        style="
+          display: flex;
+          height: 60px;
+          width: 60px;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          background-color: white;
+          flex-direction: column;
+          box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0.2);
+        "
+      >
+        <img
+          src="https://marosol-bucket-dev.s3.ap-northeast-2.amazonaws.com/images/promotion/image_marosol_logo.png"
+          width="30px"
+          height="30px"
+        />
+      </div>
+    </a>
+  </div>
+
+  <form>
+    <div class="form_tit">무료 상담 신청 정보 입력</div>
+    <div class="seb_01">
+      <div class="step-main !mb-8">
+        <div class="line_web1">
+          <div class="screen-header">
+            <div class="screen-header-left">
+              <div class="screen-header-button close"></div>
+              <div class="screen-header-button maximize"></div>
+              <div class="screen-header-button minimize"></div>
+            </div>
+            <div class="screen-header-right">
+              <div class="screen-header-ellipsis"></div>
+              <div class="screen-header-ellipsis"></div>
+              <div class="screen-header-ellipsis"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-wrap">
+          <div class="in form-box2">
+            <div class="prerequisite">
+              <span>*</span> 표시는 필수 입력입니다
+            </div>
+            <dl>
+              <dt style="display: flex">소속명<small>*</small></dt>
+              <dd>
+                <div class="inp-box">
+                  <input
+                    id="company"
+                    name="company"
+                    type="text"
+                    class="inp-p"
+                    placeholder="소속명을 입력해주세요"
+                  />
+                  <div id="companyCheck" class="show__item error_code"></div>
+                </div>
+              </dd>
+            </dl>
+            <dl>
+              <dt style="display: flex">이름<small>*</small></dt>
+              <dd>
+                <div class="inp-box">
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    class="inp-p"
+                    placeholder="이름(실명)을 입력해주세요"
+                  />
+                  <div id="nameCheck" class="show__item error_code"></div>
+                </div>
+              </dd>
+            </dl>
+            <dl>
+              <dt style="display: flex">연락처<small>*</small></dt>
+              <dd>
+                <div class="inp-box">
+                  <input
+                    id="phonenumber"
+                    name="phone"
+                    onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"
+                    type="tel"
+                    class="inp-p"
+                    placeholder="'-'없이 입력해주세요"
+                  />
+                  <div id="phoneCheck" class="show__item error_code"></div>
+                </div>
+              </dd>
+            </dl>
+            <dl>
+              <dt style="display: flex">이메일<small>*</small></dt>
+              <dd>
+                <div class="inp-box">
+                  <input
+                    id="email"
+                    name="email"
+                    type="text"
+                    class="inp-p"
+                    placeholder="이메일을 입력해주세요"
+                  />
+                  <div id="emailCheck" class="show__item error_code"></div>
+                </div>
+              </dd>
+            </dl>
+            <dl>
+              <dt style="display: flex">문의내용<small>*</small></dt>
+              <dd>
+                <div class="inp-box">
+                  <textarea
+                    id="inquiries"
+                    style="
+                      width: 400px;
+                      height: 220px;
+                      border: 2px solid #999999;
+                      border-radius: 8px;
+                      padding: 10px 16px;
+                      color: #272727;
+                      font-size: 16px;
+                      font-family: S-core;
+                      outline-color: #fe6b8b;
+                    "
+                  ></textarea>
+                </div>
+              </dd>
+            </dl>
+            <dl>
+              <dd>
+                <div class="group flex flex-col items-center">
+                  <button
+                    type="button"
+                    class="w-[50%] rounded-[4px] bg-[#f2f2f2] p-[10px] text-[14px] transition-all duration-500 hover:bg-[#aaa] hover:text-[#fff]"
+                  >
+                    개인정보 수집 내용
+                  </button>
+                  <div
+                    class="absolute top-[-175px] hidden w-[590px] z-50 rounded-[8px] group-hover:block border-[1px] border-[#000] bg-[#f6f6f6] px-[20px] pb-[20px] text-left text-[12px] text-[#000]"
+                  >
+                    <p class="p-[10px] text-center text-[15px]">
+                      개인정보 수집 및 이용
+                    </p>
+                    <p>
+                      문의 상담을 위해 아래와 같이 개인 정보를 수집 및
+                      이용합니다.
+                    </p>
+                    <p>
+                      1. 수집 이용 항목
+                      <span>&#58; 이름, 이메일, 전화번호</span>
+                    </p>
+                    <p>
+                      2. 수집 이용 목적
+                      <span>
+                        &#58; 로봇 자동화 또는 마로솔 서비스 관련 문의사항 대응
+                        및 안내, 주간 뉴스레터 및 기타 고객 맞춤 서비스 제공
+                      </span>
+                    </p>
+                    <p>
+                      3. 보유 및 이용기간
+                      <span>&#58; 1년</span>
+                    </p>
+                    <p>
+                      개인정보 수집 이용에 동의하지 않으실 수 있으며, 동의하지
+                      않는 경우 문의가 제한됩니다.
+                    </p>
+                  </div>
+                </div>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="flex flex-col items-center mb-8">
+          <label class="mt-[20px] block pb-[20px] text-center">
+            <input
+              type="checkbox"
+              id="is_agree"
+              class="checked:bg-[#00a886] checked:ring-0 focus:ring-0"
+            />
+            <span class="ml-[6px] cursor-pointer text-[13px]"
+              >위 내용을 확인하였으며 동의합니다.</span
+            >
+          </label>
+          <button
+            type="button"
+            onclick="onSubmit();"
+            class="h-[48px] w-[240px] rounded-[4px] bg-[#00a886] px-[16px] text-[16px] font-bold text-[#fff]"
+          >
+            제출
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</section>
+
+<div id="footer" style="background-color: #463e3e">
+  <div class="foot2">
+    <div class="inner">
+      <div class="cs-box">
+        <div class="sns">
+          <a
+            href="https://m.post.naver.com/my.nhn?memberNo=51685289"
+            target="_blank"
+          >
+            <img
+              src="https://marosol-bucket-dev.s3.ap-northeast-2.amazonaws.com/images/promotion/ico_naver.svg"
+              loading="lazy"
+              alt="네이버"
+            />
+          </a>
+          <a href="https://blog.naver.com/bigwaverobotics" target="_blank">
+            <img
+              src="https://marosol-bucket-dev.s3.ap-northeast-2.amazonaws.com/images/promotion/ico_blog.svg"
+              alt="블로그"
+            />
+          </a>
+          <a href="https://pf.kakao.com/_FegwK" target="_blank">
+            <img
+              src="https://marosol-bucket-dev.s3.ap-northeast-2.amazonaws.com/images/promotion/ico_kakao.svg"
+              alt="카카오"
+            />
+          </a>
+          <a
+            href="https://www.facebook.com/%EB%A7%88%EB%A1%9C%EC%86%94-Marosol-103280494961742/"
+            target="_blank"
+          >
+            <img
+              src="https://marosol-bucket-dev.s3.ap-northeast-2.amazonaws.com/images/promotion/ico_facebook.svg"
+              loading="lazy"
+              alt="페이스북"
+            />
+          </a>
+          <a
+            href="https://www.youtube.com/channel/UCHWIcFHBvaAo4VXpPVvP1DA"
+            target="_blank"
+          >
+            <img
+              src="https://marosol-bucket-dev.s3.ap-northeast-2.amazonaws.com/images/promotion/ico_youtu.svg"
+              loading="lazy"
+              alt="유튜브"
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/company/myrobotsolution"
+            target="_blank"
+            ><img
+              src="https://marosol-bucket-dev.s3.ap-northeast-2.amazonaws.com/images/promotion/ico_in.svg"
+              loading="lazy"
+              alt="링크드인"
+            />
+          </a>
+          <a href="https://www.instagram.com/myrobot_solution" target="_blank"
+            ><img
+              src="https://marosol-bucket-dev.s3.ap-northeast-2.amazonaws.com/images/promotion/ico_instar.svg"
+              loading="lazy"
+              alt="인스타그램"
+            />
+          </a>
+        </div>
+        <div class="cs">
+          <span>
+            마로솔에는 입점업체가 등록한 상품이 포함되어 있으며, 입점업체가
+            등록한 상품의 경우 빅웨이브로보틱스(주)는 통신판매중개자이며
+            통신판매 당사자가 아닙니다. <br />
+            <br class="mm" />
+            입점업체가 등록한 상품에 대하여 빅웨이브로보틱스는 상품, 거래정보 및
+            거래 등에 대하여 일체 책임을 지지 않습니다. <br />
+            <br />
+            © 2020-2021 Bigwave Robotics Inc. All Rights Reserved.
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
